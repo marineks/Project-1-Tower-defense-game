@@ -1,0 +1,58 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Texturina:wght@100;200&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+.heading {
+    border : dotted 1px rgb(31, 31, 24);
+    margin: 1rem;
+}
+.heading > div {
+    font-family: 'Texturina', serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+#grid {
+    width: 100vw;
+    height: 500px;
+    background-color: rgb(146, 155, 116) ;
+    margin: 1rem;
+    border: white;
+    position: absolute;
+}
+
+#container {
+    position: relative;
+    background-color: rgb(139, 124, 82);
+    width: 100vw;
+    height: 90px;
+}
+
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+#startBtn, #retryBtn {
+    font-family: 'Texturina', serif;
+    font-style: bold 2rem;
+
+}
+
+#startBtn {
+    margin-left: 400px;
+    margin-right: 20px;
+}
+
+#resetBtn {
+    margin-left: 15px;
+}
