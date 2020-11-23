@@ -1,0 +1,128 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Texturina:wght@100;200&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://img4.goodfon.com/wallpaper/nbig/d/ef/pixel-art-fez-fez-pikseli-art-fon-nebo-dom-ptitsy-minimalizm.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#heart, #shop {
+    width: 30px;
+    height: 30px;
+}
+
+.heading  {
+    border : dotted 1px rgb(31, 31, 24);
+    margin: 5em 2rem 2em 2rem;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1em;
+}
+.heading > div {
+    font-family: 'Texturina', serif;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#startBtn, #retryBtn {
+    font-family: 'Texturina', serif;
+    font-style: bold 2rem;
+
+}
+
+#grid {
+    width: 800px;
+    height: 500px;
+    background-color: rgb(250, 250, 250) ;
+    margin-left: 2rem;
+    margin-bottom: 3rem;
+    border: black dotted 2px;
+    
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-auto-rows: repeat(1fr);
+    /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
+}
+
+.grass {
+    background-image: url(/0-images/grass.png);
+    background-size: contain;
+}
+
+.path {
+    background-color: rgb(253, 253, 253);
+}
+
+#startBtn {
+    margin-bottom: 1rem;
+}
+
+#base {
+    /* background-color: red; */
+    background-image: url("https://cdn.dribbble.com/users/518045/screenshots/6338485/800x600.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.canbetower {
+    border-radius: 50%;
+    background-image: url(/0-images/tower1.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+
+
+  #enemy {
+      background-color: black;
+      /* background-image: url(/0-images/enemy.jpg); */
+      background-size: contain;
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+      position: relative;
+      display: inline-block;
+      margin-top: 50px;
+      animation: enemy 3s infinite linear;
+  }
+
+  @keyframes enemy{
+    0%{left: 0px} 
+    100%{left: -679px}
+}
+
+#enemy.hurt {
+    background-color: rgb(230, 110, 63);
+    animation: 
+    pulse 3s infinite linear;
+
+  }
+
+
+
+@keyframes pulse {
+    0% {
+      background-color: #ec523d;
+      left: 0px;
+    }
+    100% {
+      background-color: #b42e44;
+      left: -679px;
+    }
+  }

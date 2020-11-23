@@ -3,34 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' href='/0-images/faviconfinal.png' type='image/x-icon'/ >
     <title>Tower defense game</title>
-    <link href="./1 - css files/game-grid-shop-lives.css" rel="stylesheet">
+    <link href="/1 - css files/world.css" rel="stylesheet">
 </head>
 <body>
 
     <!-- This part is going to be above the grid and will display the 
         HP of the base as well as the player's current gold. -->
-   <section class="heading">
-    <div>Base life : <span id="life-value"> 25</span> HP</div>
-    <div>Shop : $<span id="gold-counter">000</span></div>
+     <div class="heading">
+        <div> 
+            <img id="heart" src="./0-images/like.png" alt="heart" />
+            Base life : <span id="life-value"> 200</span> HP
+        </div>
 
-   </section>
+        <div>
+            <img id="shop" src="0-images/shop.jpg"alt="shop"/>
+            $</span id="gold-counter">000</span>
+        </div>
+
+    </div>
    
- <section id = "footer">
-       <div class="buttons">
-           <button id="startBtn">Start!</button>
-           <button id="retryBtn">Retry!</button>
-       </div>
-   </section>
+    <!-- This is the part where the grid/world is -->
+    <section id="grid">
 
-   <section id="grid">
+        <!-- <div id= "map">
+            <div id="base"></div>
+            <div class="enemy"></div>   
+        </div> -->
 
-    <div id= "container"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div> 
+        <div class="item grass"></div> <!-- 2nd row-->
+        <div class="item  grass canbetower"></div> <!--canbetower-->
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item  grass canbetower"></div> <!--canbetower-->
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item path"> <div id="base"></div></div> <!--3rd row-->
+        <div class="item path"></div>
+        <div class="item path"></div>
+        <div class="item path"></div>
+        <div class="item path"></div>
+        <div class="item path"></div>
+        <div class="item path"></div>
+        <div class="item path"></div>
+        <div class="item path"></div>
+        <div class="item path"> <div id="enemy"></div> <div id="enemy"></div></div>
+        <div class="item grass"></div> <!--4th row-->
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass canbetower"></div> <!--canbetower-->
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div> 
+        <div class="item grass canbetower"></div><!--canbetower-->
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div> <!-- 5th row-->
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
 
-   </section>
+    </section>
 
-  
-
-
+<!-- This is the buttons to start and retry the game -->
+<section id = "controls">
+    <div class="buttons">
+        <button id="startBtn">Start!</button>
+        <button id="retryBtn">Retry!</button>
+    </div>
+ </section>
 </body>
 </html>
