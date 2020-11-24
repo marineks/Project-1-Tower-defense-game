@@ -4,8 +4,23 @@
 body {
     margin:0;
     padding: 0;
-    
+    background: linear-gradient(-45deg, #e9dcd8, #eec1d2, #e0a199, #c5a6c5);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 
 h1 {
     text-align: center;
@@ -19,12 +34,14 @@ span {
     display: flex;
     justify-content: space-around;
     margin: 5em 15em 5em 15em;
+    background-color: white;
+    border-style: outset;
 }
 
 .left {
     display: flex;
     font-size: 'Texturina', serif;
-    
+
 }
 
 .item {
@@ -46,7 +63,7 @@ span {
 }
 
 button {
-    
+
     background: linear-gradient(to right, #c9a0db, #ce8bb2);
     border: none;
     font-family: 'Texturina', serif;
@@ -58,7 +75,7 @@ button {
     font-weight:300;
     font-size: 1rem;
     color: white;
-    
+
 }
 
 a {
@@ -90,7 +107,7 @@ p {
 }
 
 #big {
-    margin: 5em 5em 0.5em 5em;
+    margin: 5em 5em 0.5em 1em;
     width: 384px;
 
 }
@@ -98,4 +115,4 @@ p {
 #jump {
     width: 100px;
     height: 75px;
-}
+} 

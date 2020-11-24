@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='icon' href='/0-images/faviconfinal.png' type='image/x-icon'/>
     <title>Tower defense game</title>
-    <link href="/1 - css files/world.css" rel="stylesheet">
+    <link href="/1-css/world.css" rel="stylesheet">
+    <script type="module" src="/2 - JS elements/1-base.js"></script>
+    <script type="module" src="/2 - JS elements/2 - tower.js"></script>
+    <script type="module" src="/2 - JS elements/3 - enemy.js"></script>
+    <script type="module" src="/2 - JS elements/4 - shop-mechanics.js"></script>
+    
 </head>
 <body>
 
@@ -14,12 +19,12 @@
      <div class="heading">
         <div> 
             <img id="heart" src="./0-images/like.png" alt="heart" />
-            Base life : <span id="life-value"> 200</span> HP
+            Base life : <span id="life-value"> 200 </span> HP
         </div>
 
         <div>
             <img id="shop" src="0-images/shop.jpg"alt="shop"/>
-            $</span id="gold-counter">000</span>
+            $ <span id="gold-counter"> 000 </span>
         </div>
 
     </div>
@@ -43,12 +48,12 @@
         <div class="item grass"></div>
         <div class="item grass"></div> 
         <div class="item grass"></div> <!-- 2nd row-->
-        <div class="item  grass canbetower"></div> <!--canbetower-->
+        <div id="canbe" class="item"></div> <!--canbetower-->
         <div class="item grass"></div>
         <div class="item grass"></div>
         <div class="item grass"></div>
         <div class="item grass"></div>
-        <div class="item  grass canbetower"></div> <!--canbetower-->
+        <div id="canbe" class="item"></div> <!--canbetower-->
         <div class="item grass"></div>
         <div class="item grass"></div>
         <div class="item grass"></div>
@@ -61,15 +66,15 @@
         <div class="item path"></div>
         <div class="item path"></div>
         <div class="item path"></div>
-        <div class="item path"> <div id="enemy"></div> <div id="enemy"></div></div>
+        <div class="item path"> <div id="enemy"></div> <div id="enemy"></div> </div>
         <div class="item grass"></div> <!--4th row-->
         <div class="item grass"></div>
         <div class="item grass"></div>
-        <div class="item grass canbetower"></div> <!--canbetower-->
+        <div id="canbe" class="item canbetower"></div> <!--canbetower-->
         <div class="item grass"></div>
         <div class="item grass"></div>
         <div class="item grass"></div> 
-        <div class="item grass canbetower"></div><!--canbetower-->
+        <div id="canbe" class="item"></div><!--canbetower-->
         <div class="item grass"></div>
         <div class="item grass"></div>
         <div class="item grass"></div> <!-- 5th row-->

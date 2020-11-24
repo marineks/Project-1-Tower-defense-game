@@ -5,16 +5,22 @@ class Tower {
 
     }
     display() {
-        // if you click on a cell with class "canBeTower" 
-        // && player.money >= 50 
-        // then change  of color of tower in red
-        // else throw error "you're too poor to build a tower!"
+        if (player.money >= 50) {
+            selectableTile.classList.add('canbetower');
+            moneyCounter.innerHTML = moneyCounter - 50;
+        } else {
+            throw new Error ("You are too poor to build a tower!");
+        }
+        
     }
     upgrade() {
-        // if click && color of class already red
-        // && player.money >=100
-        // then toggle the color of tower in blue
-        // else throw error "You dont have enough money to upgrade the tower!"
+        if (player.money>= 100) {
+            towerTile.classList.remove('canbetower');
+            towerTile.classList.add('upgraded');
+            moneyCounter.innerHTML = moneyCounter - 100;
+        } else {
+            throw new Error ("You dont have enough money to upgrade the tower!");
+        }
     }
     attack(){
         // if (enemy.position is COORDONNEES) {
@@ -25,6 +31,19 @@ class Tower {
     //}
     }
 }
+
+
+
+// Fetch here the elements 
+
+const selectableTile = document.getElementById('canbe');
+const towerTile = document.querySelector(".canbetower");
+
+// AddEventListener
+
+// selectableTile.addEventListener("click", display());
+
+// towerTile.addEventListener("click", upgrade());
 
 // ADDITIONAL FEATURE
 // class upgradedTower extends Tower {
@@ -38,11 +57,3 @@ class Tower {
 
 //     }
 // }
-
-// Fetch here the elements with class "canBeTower"
-
-
-
-// AddEventListener
-
-// canBeTower.addEventListener("click", display());
