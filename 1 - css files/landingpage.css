@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Texturina:wght@100;200&display=swap');
+
+
+body {
+    margin:0;
+    padding: 0;
+    
+}
+
+h1 {
+    text-align: center;
+}
+
+span {
+    font-style: italic;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin: 5em 15em 5em 15em;
+}
+
+.left {
+    display: flex;
+    font-size: 'Texturina', serif;
+    
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: justify;
+    margin: 3em;
+}
+
+.item:first-child {
+    margin-top: 10em;
+    margin-bottom: 0;
+}
+
+.item:nth-child(2) {
+    margin-top: 0;
+}
+
+button {
+    
+    background: linear-gradient(to right, #c9a0db, #ce8bb2);
+    border: none;
+    font-family: 'Texturina', serif;
+    padding:0.35em 1.2em;
+    border:0.1em solid #ddd6d6;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    font-weight:300;
+    font-size: 1rem;
+    color: white;
+    
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+button:hover {
+    background-color: linear-gradient(to right, #c178e0, #e77aba);
+    padding-left: 50px;
+    padding-right: 50px;
+    transition: 1s ease;
+}
+
+
+
+footer {
+    text-align: center;
+    margin-top: 5em;
+}
+
+span:hover {
+    color: pink;
+    transition: 0.5s ease;
+}
+
+p {
+    text-align: center;
+}
+
+#big {
+    margin: 5em 5em 0.5em 5em;
+    width: 384px;
+
+}
+
+#jump {
+    width: 100px;
+    height: 75px;
+}

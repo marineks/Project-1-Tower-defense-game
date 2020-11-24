@@ -3,104 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='icon' href='/0-images/faviconfinal.png' type='image/x-icon'/ >
-    <title>Tower defense game</title>
-    <link href="/1 - css files/world.css" rel="stylesheet">
+    <link rel='icon' href='/0-images/faviconfinal.png' type='image/x-icon'/>
+    <title>Landing page</title>
+
+    <!-- link to landingpage css -->
+    <link href="/1 - css files/landingpage.css" rel="stylesheet">
 </head>
 <body>
+    <div class="container">
+    
+    <div class="Left">
+    
+    <div class="item"><h1>Welcome to my <span>`${game.name}`</span>!</h1></div>
 
-    <!-- This part is going to be above the grid and will display the 
-        HP of the base as well as the player's current gold. -->
-     <div class="heading">
-        <div> 
-            <img id="heart" src="./0-images/like.png" alt="heart" />
-            Base life : <span id="life-value"> 200</span> HP
-        </div>
+    <div class="item"> <img id="jump" src="/0-images/jump.gif" alt=""></div>
 
-        <div>
-            <img id="shop" src="0-images/shop.jpg"alt="shop"/>
-            $</span id="gold-counter">000</span>
-        </div>
+    <div class="item">I guess we could discuss the implications of the phrase "meant to be." That is if we wanted to drown ourselves in a sea of backwardly referential semantics and other mumbo-jumbo. Maybe such a discussion would result in the determination that "meant to be" is exactly as meaningless a phrase as it seems to be, and that none of us is actually meant to be doing anything at all. But that's my existential underpants underpinnings showing. It's the way the cookie crumbles. And now I want a cookie.</div>
 
+    <div class="item"><button> <a href="temp.html">Go to the game</a></button></div>
     </div>
-   
-    <!-- This is the part where the grid/world is -->
-    <section id="grid">
 
-        <!-- <div id= "map">
-            <div id="base"></div>
-            <div class="enemy"></div>   
-        </div> -->
+    <div class="right">
+    
+    <img id="big" src="/0-images/landingimg.png" alt="Landing image of a lofi tower"/>
 
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div> 
-        <div class="item grass"></div> <!-- 2nd row-->
-        <div class="item  grass canbetower"></div> <!--canbetower-->
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item  grass canbetower"></div> <!--canbetower-->
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item path"> <div id="base"></div></div> <!--3rd row-->
-        <div class="item path"></div>
-        <div class="item path"></div>
-        <div class="item path"></div>
-        <div class="item path"></div>
-        <div class="item path"></div>
-        <div class="item path"></div>
-        <div class="item path"></div>
-        <div class="item path"></div>
-        <div class="item path"> <div id="enemy"></div> <div id="enemy"></div></div>
-        <div class="item grass"></div> <!--4th row-->
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass canbetower"></div> <!--canbetower-->
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div> 
-        <div class="item grass canbetower"></div><!--canbetower-->
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div> <!-- 5th row-->
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-        <div class="item grass"></div>
-
-    </section>
-
-<!-- This is the buttons to start and retry the game -->
-<section id = "controls">
-    <div class="buttons">
-        <button id="startBtn">Start!</button>
-        <button id="retryBtn">Retry!</button>
+    <p> credits to be added</p>
     </div>
- </section>
+    
+    </div>
+
+    <footer>About | This game is developed by <span>Marine Sanjuan - student at Ironhack Paris (2020)</span></footer>
 </body>
 </html>
