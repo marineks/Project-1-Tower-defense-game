@@ -49,7 +49,7 @@ body {
 
 #startBtn, #retryBtn {
     font-family: 'Texturina', serif;
-    font-style: bold 2rem;
+    font-style: bold 4rem;
 
 }
 
@@ -66,6 +66,7 @@ body {
 .grass {
     background-image: url(/0-images/grass.png);
     background-size: contain;
+    /* background-color: rgb(186, 204, 170); */
 }
 
 .path {
@@ -78,11 +79,11 @@ body {
 }
 
 #base {
-    /* background-color: red; */
+    /* background-color: rgb(176, 145, 211); */
     background-image: url("https://cdn.dribbble.com/users/518045/screenshots/6338485/800x600.png");
     background-size: cover;
     background-repeat: no-repeat;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     width: 5rem;
     height: 5rem;
     position: relative;
@@ -90,47 +91,62 @@ body {
 }
 
 .canbetower {
-    border-radius: 50%;
     background-image: url(/0-images/tower1.gif);
     background-size: contain;
     background-repeat: no-repeat;
 
 }
 
+.upgraded {
+    background-image: url(/0-images/tower2.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
-  #enemy {
-      /* background-color: black; */
-      display: inline-block;
+#enemy {
+    display: inline-block;
       background-image: url(/0-images/enem.gif); 
       background-repeat: no-repeat;
       background-size: contain;
       width: 60px;
       height: 60px;
       overflow: hidden;
-      position: relative;
       margin-top: 50px;
-      animation: enemy 6s infinite linear;
+}
+
+.moving {
+      /* background-color: black; */
+      position: absolute;
+      animation: moving 7s infinite linear;
   }
 
-  @keyframes enemy{
-    0%{left: 0px} 
-    100%{left: -679px}
+  @keyframes moving{
+    0% {
+        transform: translateX(0px); /* before it was just left: 0px */
+    } 
+    100% {
+        transform: translateX(-895px);
+    }
 }
 
 #enemy.hurt {
     background-color: rgb(230, 110, 63);
-    animation: 
-    pulse 3s infinite linear;
+    animation: pulse 1s alternate;
 
   }
 
 @keyframes pulse {
     0% {
-      background-color: #ec523d;
-      left: 0px;
+        background-image: url(/0-images/enem.gif); 
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 60px;
+        height: 60px;
+        overflow: hidden;
+        margin-top: 50px;
     }
     100% {
       background-color: #b42e44;
-      left: -679px;
+      
     }
   } 

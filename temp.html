@@ -6,10 +6,10 @@
     <link rel='icon' href='/0-images/faviconfinal.png' type='image/x-icon'/>
     <title>Tower defense game</title>
     <link href="/1-css/world.css" rel="stylesheet">
-    <script type="module" src="/2 - JS elements/1-base.js"></script>
-    <script type="module" src="/2 - JS elements/2 - tower.js"></script>
+    <script type="module" src="/2 - JS elements/main.js"></script>
+    <!-- <script type="module" src="/2 - JS elements/2 - tower.js"></script>
     <script type="module" src="/2 - JS elements/3 - enemy.js"></script>
-    <script type="module" src="/2 - JS elements/4 - shop-mechanics.js"></script>
+    <script type="module" src="/2 - JS elements/4 - shop-mechanics.js"></script> -->
     
 </head>
 <body>
@@ -48,12 +48,12 @@
         <div class="item grass"></div>
         <div class="item grass"></div> 
         <div class="item grass"></div> <!-- 2nd row-->
-        <div id="canbe" class="item"></div> <!--canbetower-->
+        <div class="item canbet"></div> <!--canbetower-->
         <div class="item grass"></div>
         <div class="item grass"></div>
         <div class="item grass"></div>
         <div class="item grass"></div>
-        <div id="canbe" class="item"></div> <!--canbetower-->
+        <div class="item canbe"></div> <!--canbetower-->
         <div class="item grass"></div>
         <div class="item grass"></div>
         <div class="item grass"></div>
@@ -66,15 +66,15 @@
         <div class="item path"></div>
         <div class="item path"></div>
         <div class="item path"></div>
-        <div class="item path"> <div id="enemy"></div> <div id="enemy"></div> </div>
+        <div class="item path"> <div id="enemy"></div> </div>
         <div class="item grass"></div> <!--4th row-->
         <div class="item grass"></div>
         <div class="item grass"></div>
-        <div id="canbe" class="item canbetower"></div> <!--canbetower-->
+        <div class="item canbetower"></div> <!--canbetower-->
         <div class="item grass"></div>
         <div class="item grass"></div>
         <div class="item grass"></div> 
-        <div id="canbe" class="item"></div><!--canbetower-->
+        <div class="item canbe"></div><!--canbetower-->
         <div class="item grass"></div>
         <div class="item grass"></div>
         <div class="item grass"></div> <!-- 5th row-->
@@ -103,7 +103,7 @@
 <!-- This is the buttons to start and retry the game -->
 <section id = "controls">
     <div class="buttons">
-        <button id="startBtn">Start!</button>
+        <button id="startBtn">Start the level when you're ready!</button>
         <button id="retryBtn">Retry!</button>
     </div>
  </section>

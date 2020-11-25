@@ -6,18 +6,19 @@ class Tower {
     }
     display() {
         if (player.money >= 50) {
+            selectableTile.classList.remove('grass');
             selectableTile.classList.add('canbetower');
-            moneyCounter.innerHTML = moneyCounter - 50;
+            // moneyCounter.innerHTML = moneyCounter - 50;
         } else {
             throw new Error ("You are too poor to build a tower!");
         }
         
     }
     upgrade() {
-        if (player.money>= 100) {
+        if (player.money >= 100) {
             towerTile.classList.remove('canbetower');
             towerTile.classList.add('upgraded');
-            moneyCounter.innerHTML = moneyCounter - 100;
+            // moneyCounter.innerHTML = moneyCounter - 100;
         } else {
             throw new Error ("You dont have enough money to upgrade the tower!");
         }
@@ -32,7 +33,7 @@ class Tower {
     }
 }
 
-
+const newTower = new Tower();
 
 // Fetch here the elements 
 
@@ -41,9 +42,9 @@ const towerTile = document.querySelector(".canbetower");
 
 // AddEventListener
 
-// selectableTile.addEventListener("click", display());
+selectableTile.addEventListener("click", newTower.display);
 
-// towerTile.addEventListener("click", upgrade());
+towerTile.addEventListener("click", newTower.upgrade);
 
 // ADDITIONAL FEATURE
 // class upgradedTower extends Tower {
