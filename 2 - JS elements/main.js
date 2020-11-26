@@ -1,7 +1,32 @@
-// DECLARATION OF VARIABLES
+ //// FETCH HTML ELEMENTS
+
+// Status bar
+ const moneyCounter = document.getElementById('gold-counter');
+ const baseHealth = document.getElementById('life-value');
+
+ // Map
+ const grid = document.getElementById('grid');
+ const selectableTile = document.querySelector('.can-build-tower')
+ const towerTile = document.querySelector('.tower-rank-one');
+ const upgradedTile = document.querySelector('.tower-rank-two');
+
+ // Entities
+ const horde = document.getElementById('enemy');
+ const castle = document.getElementById('base');
+
+ const towerOne = document.getElementById('tower-one');
+ const towerTwo = document.getElementById('tower-two');
+ const towerThree = document.getElementById('tower-three');
+ 
+ // Buttons
+ const startBtn = document.getElementById('startBtn');
+ const retryBtn = document.getElementById('retryBtn');
+ const nextBtn = document.getElementById('nextBtn');
+
+//// DECLARATION OF VARIABLES
 let player = {
     name: "Rodrigo",
-    money : 100,
+    money : 150,
 }
 
 const base = {
@@ -11,53 +36,57 @@ const base = {
 
 class Tower {
     constructor() {
-        this.attack = 6;
+        this.attack = 1;
         this.health = 100;
+        this.rank = 0;
 
     }
     display() {
-        if (player.money >= 50) {
-            //selectableTile.classList.remove('grass');
-            selectableTile.classList.add('canbetower');
-            moneyCounter.innerHTML = player.money - 50;
+
+        if (player.money >= 50 && this.rank === 0) {
+            
+            towerOne.classList.add('tower-rank-one');
+
+            player.money = player.money - 50;
+            moneyCounter.innerHTML = player.money;
+
+            this.rank = 1;
+
+        } else if (player.money >= 100 && this.rank === 1) {
+
+            towerOne.classList.remove('tower-rank-one');
+            towerOne.classList.add('tower-rank-two');
+
+            player.money = player.money - 100;
+            moneyCounter.innerHTML = player.money;
+
+            this.rank = 2;
+
         } else {
-            throw new Error ("You are too poor to build a tower!");
+            alert("You are too poor!");
         }
         
     }
-    upgrade() {
-        if (player.money >= 100) {
-            towerTile.classList.remove('canbetower');
-            towerTile.classList.add('upgraded');
-            moneyCounter.innerHTML = player.money - 100;
-        } else {
-            throw new Error ("You dont have enough money to upgrade the tower!");
-        }
-    }
-    attack(){
-        // if (enemy.position < position.x && enemy.position > position.y) {
-           // setInterval(function dmgBase(){
-             //  enemy.health = enemy.health - 2;
-            // add classList "hurt" when the enemy blinks
-        //   }, 1000) 
-        // 
-        // return enemy.health;
-    //}
+    attackEnemy(){
+        setInterval(() => {
+            minion.health = minion.health - 2; 
+            horde.classList.add('hurt'); 
+            minion.checkDie(); 
+        }, 1000);
+           
+        return minion.health;
     }
 }
-
 
 class Enemy {
     constructor () {
         this.health = 10;
-        this.strength = 20;
-        this.positionx = 0;
+        this.strength = 200;
     
     }
     domRect(){
         const horde = document.getElementById('enemy');
         let currentPos = horde.getBoundingClientRect();
-        //console.log("curr po", currentPos);
         return currentPos;
     }
     move() {
@@ -67,145 +96,130 @@ class Enemy {
         
         base.health = base.health - this.strength;
         updateHealth();
-        horde.style.visibility = "hidden"
-        setTimeout(()=>horde.style.visibility = "visible",1000)
-        horde.classList.remove('moving'); // make the enemy disappear
+
+        horde.classList.remove('moving'); 
+        horde.style.visibility = "hidden";
+        setTimeout(()=> horde.style.visibility = "visible", 1000);
+
         return base.health;
-       
     }
-    die() {
+    checkDie() {
         if (this.health <= 0) {
-            horde.classList.remove('enemy'); //make the enemy disappear
-            this.strength = 0; // remove its strength so it cant hurt the base
+            horde.classList.remove('enemy'); 
+            horde.classList.remove('hurt');
+            this.strength = 0;  
             
         }
     }
 }
 
- const newTower = new Tower();
+ const towerA = new Tower();
+ const towerB = new Tower();
+ 
  const minion = new Enemy();
 
- minion.domRect();
-
-  // FETCH HTML ELEMENTS
-
- // Map
-
-const selectableTile = document.querySelector('.canbe')
-const towerTile = document.querySelector('.canbetower');
-
-// Buttons
-const startBtn = document.getElementById('startBtn');
-const retryBtn = document.getElementById('retryBtn');
-
-// Entities
-const horde = document.getElementById('enemy');
-const castle = document.getElementById('base');
-console.log("fetch castle", )
-// Status bar
-const moneyCounter = document.getElementById('gold-counter');
-const baseHealth = document.getElementById('life-value');
-
-// ADDEVENTLISTENERS
-
-//Map
-selectableTile.addEventListener("click", newTower.display);
-towerTile.addEventListener("click", newTower.upgrade);
-
-// Start buttons 
-startBtn.addEventListener("click", minion.move);
-retryBtn.addEventListener("click", function (){
-    retryBtn.textContent = "YoU cAn jUsT rEfResH thE pAge";
-});
-
- // CHECK COLLISIONS
+ //// CHECK COLLISIONS
 
  // Attack of the base
+
  var foe = minion.domRect();
  var b = castle.getBoundingClientRect();
- console.log("b", b);
- console.log("foe", foe);
+
+const tileOne = document.querySelector(".tile-one");
+ const tileTwo = document.querySelector(".tile-two");
+ var tile1 = tileOne.getBoundingClientRect();
+ var tile2 = tileTwo.getBoundingClientRect();
+
 
  function updatePos() {
-      foe = minion.domRect();
-    //console.log("foe int", foe);
-    return foe;
+        foe = minion.domRect();
+        return foe;
  }
-    // memento for DomRect:
-    //      left = x
-    //      top = y
-    //      right = x + width
-    //      bottom = y + height
 
  function checkBaseCollision(foe, b) {  
-    
         if (foe.x <= (b.x+b.width)) {
-            console.log("je touche la base");
             minion.attackBase();
- }
-    //requestAnimationFrame(minion.attackBase());
-    //console.log("collision?");
- }
-
- setInterval(() => {
-    updatePos();
-     checkBaseCollision(foe, b);
-    }, 1000/60);
- //requestAnimationFrame(minion.attackBase());
-
- // Attack of the tower
- function checkEnemyCollision(foe, tile){
-    if (foe.x <= (b.x+b.width)) {
-        console.log("je touche l'ennemi");
-        minion.attackBase();
     }
  }
 
+ // Attack of the towers
+
+ function checkEnemyCollision(foe, tile2) {
+        if ((foe.x <= (tile2.x+tile2.width) && towerA.rank > 0)) {
+            horde.classList.add('hurt');
+            towerA.attackEnemy();
+        } 
+ }
+
+//  function checkEnemyCollisionB(foe, tile1) {
+//     if ((foe.x <= (tile1.x+tile1.width) && towerB.rank > 0)) {
+//         horde.classList.add('hurt');
+//         towerB.attackEnemy();
+//     } 
+// }
 
 
-// SHOP MECHANICS
+//// SHOP MECHANICS
 
-function updateMoney (){
-    const moneyCounter = document.getElementById('gold-counter');
-    moneyCounter.textContent = player.money;
-};
-
-function gainMoney(){
-    
-    if (minion.health === 0) {
-        const moneyCounter = document.getElementById('gold-counter');
-        console.log("hey I'm the money counter!", moneyCounter);
-         return moneyCounter.textContent = player.money + 20;
+function gainMoney(){  
+    if (minion.health <= 0) {
+        player.money = player.money + 20;
+        moneyCounter.textContent = player.money;
     }
 };
 
-updateMoney();
-gainMoney();
-    
-
-// WIN LOSE MECHANICS
+//// WIN LOSE MECHANICS
 
 function updateHealth (){
     const baseHealth = document.getElementById('life-value');
     baseHealth.textContent = base.health;
-console.log(base.health)
 };
 
- // éventuellement mettre un timer pour que le jeu réactualise 
+const loseScreen = document.querySelector('.lose');
+const winScreen = document.querySelector('.win');
 
 function winGame () {
-    // all enemies are dead == if (enemyArmy.length = 0 && base.health > 0) {
-    //  display div with a gif visiblity !hidden and the message "Yay, you won!" 
-    // + triggers the possibility to retry 
-    //}
+    if (minion.health === 0 && base.health > 0) {
+        grid.classList.add('fadeOut');
+        winScreen.classList.add('winFadeIn');
+        moneyCounter.innerHTML = 0;
+    }
 }
 
 function loseGame () {
-            setTimeout(function(){
-                if (base.health <= 0){
-                    // display the lose window!
-                }
-            }, 1000)
-        
+    if (base.health <= 0){
+        grid.classList.add('fadeOut');
+        loseScreen.classList.add('loseFadeIn');
+    }       
 }
 
+//// ADDEVENTLISTENERS
+
+//Map
+towerOne.addEventListener("click", towerA.display.bind(towerA));
+
+towerTwo.addEventListener("click", towerB.display.bind(towerB));
+
+
+// Start buttons 
+startBtn.addEventListener("click", minion.move);
+retryBtn.addEventListener("click", function (){
+    retryBtn.textContent = "No budget, please do refresh the page";
+});
+nextBtn.addEventListener("click", function (){
+    nextBtn.innerHTML = "Stay tuned 😉";
+});
+
+//// SET INTERVALS, functions to call
+
+
+setInterval(() => {
+    updatePos();
+    checkBaseCollision(foe, b);
+    checkEnemyCollision(foe, tile2);
+    gainMoney();
+    winGame();
+    loseGame();
+    }, 1000/60);
+
+minion.domRect();

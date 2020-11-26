@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' href='/0-images/faviconfinal.png' type='image/x-icon'/>
+    <title>Tower defense game</title>
+    <link href="1-css/world.css" rel="stylesheet">
+    <script type="module" src="/2 - JS elements/main.js"></script>
+</head>
+<body>
+    <embed src="/0-images/mega-vibe.mp3" width="180" height="90" loop="false" autostart="true" hidden="true" />
+    <!-- STATUS BAR -->
+     <div class="heading">
+        <div> 
+            <img id="heart" src="./0-images/like.png" alt="heart" />
+            Base life : <span id="life-value"> 200 </span> HP
+        </div>
+
+        <div>
+            <img id="shop" src="0-images/shop.jpg"alt="shop"/>
+            $ <span id="gold-counter"> 150 </span>
+        </div>
+
+    </div>
+    <!-- WIN / LOSE HIDDEN SCREENS -->
+    <div class="lose">
+        <img src="./0-images/lose.gif" alt="You lost!">
+        <p>Maybe you should question your life-choices...</p> 
+    </div>
+    <div class="win">
+        <img src="./0-images/win.gif" alt="You won!">
+        <p>Congrats, you won the tutorial !</p> 
+    </div>
+
+   <!-- GAME RULES-->
+    <div class="flex">
+    <aside class="rules">
+        <h1>Tutorial/Game rules</h1>
+        <ul>
+            <li>Kill the enemy before it strikes the base</li>
+            <li>Click on a white tile to build a tower (50 gold).</li>
+            <li>You can upgrade it if you have 100 gold.</li>
+            <li>For the purpose of this tutorial the strength of the enemy is equal to the one of the base.</li>
+            <li>May the (absolutely not skewed) odds be in your favor!</li>
+           
+    </ul>
+    </aside>
+
+    <!-- GRID -->
+    <section id="grid">
+
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div> 
+        <!-- 2nd row-->
+        <div class="item grass"></div> 
+        <div class="item grass"></div> 
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <!--can-build-tower-->
+        <div id="tower-one" class="item can-build-tower"></div> 
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <!--3rd row - Base is here -->
+        <div class="item path"> 
+            <div id="base"></div>
+        </div> 
+        <div class="item path"></div>
+        <div class="item path"></div>
+        <div class="item path tile-one"></div>
+        <div class="item path"></div>
+        <div class="item path "></div>
+        <div class="item path tile-two"></div>
+        <div class="item path"></div>
+        <div class="item path"></div>
+        <!-- enemy is here  -->
+        <div class="item path"> 
+            <div id="enemy"></div> 
+        </div>
+        <!--4th row-->
+        <div class="item grass"></div>
+        <div class="item grass"></div> 
+        <div class="item grass"></div>
+        <!--can-build-tower-->
+        <div id="tower-two" class="item grass"></div> 
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div> 
+        <!--can-build-tower-->
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <!-- 5th row-->
+        <div class="item grass"></div> 
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <!-- 6th row-->
+        <div class="item grass"></div> 
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+        <div class="item grass"></div>
+
+    </section>
+</div>
+
+<!-- START & RETRY BUTTONS -->
+<section id = "controls">
+    <div class="buttons">
+        <button id="startBtn">Start the level when you're ready!</button>
+        <button id="retryBtn">Retry!</button>
+        <button id="nextBtn">Next level!</button>
+    </div>
+ </section>
+</body>
+</html>

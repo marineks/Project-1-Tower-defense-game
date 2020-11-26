@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@900&family=Quicksand&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.gamerules {
+  height: 100vh;
+  background: linear-gradient(186deg, #5f4772, #585b8a);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 12s ease infinite;
+  -moz-animation: AnimationName 12s ease infinite;
+  animation: AnimationName 12s ease infinite;
+  font-family: 'Quicksand', sans-serif;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 57%}
+  50%{background-position:100% 44%}
+  100%{background-position:0% 57%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 57%}
+  50%{background-position:100% 44%}
+  100%{background-position:0% 57%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 57%}
+  50%{background-position:100% 44%}
+  100%{background-position:0% 57%}
+}
+
+
+    /* background-color: rgb(44, 44, 75); */
+    
+.score {
+    color: white;
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.score h1 {
+    font-size: 30px;
+
+}
+
+.score p {
+    text-align: center;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.context {
+    color: white;
+    background-image: url('/0-images/snow.gif');
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: opacity 0.7 ease;
+}
+
+
+.context h2 {
+    font-size: 50px;
+}
+
+.context span {
+  color: black;
+  background-color: white;
+  font-size: 11px;
+  font-style: italic;
+  text-align: center;
+}
+
+.context button,
+.match button {
+    width: 150px;
+    height: 50px;
+    background: none;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    color: black;
+    font-size: 20px;
+    background: rgb(243, 237, 243);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.match {
+    position: absolute;
+    z-index: 1;
+    left: 20%;
+    margin-top: -346px;
+/*     
+    transform: translate (-50%, -50%);
+    transition: opacity 0.5 ease 0.5s; */
+   
+}
+
+.win {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+
+.choices,
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.player-choice {
+    transform: rotateY(180deg);
+}
+
+.transition {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.transitionIn {
+    opacity: 1;
+    pointer-events: all;
+}
+
+@keyframes movePlayer {
+    0% {
+      transform: rotateY(180deg) translateY(0px);
+    }
+    15% {
+      transform: rotateY(180deg) translateY(-50px);
+    }
+    25% {
+      transform: rotateY(180deg) translateY(0px);
+    }
+    35% {
+      transform: rotateY(180deg) translateY(-50px);
+    }
+    50% {
+      transform: rotateY(180deg) translateY(0px);
+    }
+    65% {
+      transform: rotateY(180deg) translateY(-50px);
+    }
+    75% {
+      transform: rotateY(180deg) translateY(0px);
+    }
+    85% {
+      transform: rotateY(180deg) translateY(-50px);
+    }
+    100% {
+      transform: rotateY(180deg) translateY(0px);
+    }
+  }
+  
+  @keyframes moveComputer {
+    0% {
+      transform: translateY(0px);
+    }
+    15% {
+      transform: translateY(-50px);
+    }
+    25% {
+      transform: translateY(0px);
+    }
+    35% {
+      transform: translateY(-50px);
+    }
+    50% {
+      transform: translateY(0px);
+    }
+    65% {
+      transform: translateY(-50px);
+    }
+    75% {
+      transform: translateY(0px);
+    }
+    85% {
+      transform: translateY(-50px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  
+  .glitchou {
+    position: relative;
+    z-index: 3;
+    opacity: 0;
+    width: 150px;
+    width: 150px;
+  }
+
+  /* .glitchou:hover {
+
+  } */
+
+
+  .appears {
+    z-index: 3;
+    opacity: 1;
+    cursor: not-allowed;
+  }
+
+  .dooms-text {
+    font: black bold;
+    font-family: 'Big Shoulders Stencil Display';
+    font-size: 13px;
+    margin-left: 6.66px;
+    opacity: 0;
+    position: relative;
+    z-index: 3;
+    animation: beware 3s;
+  }
+
+  @keyframes beware {
+    0% {
+      font-size: 13px;
+  } 100% {
+      font-size: 30px;
+  }
+}
+
+  .transition-in {
+    z-index: 3;
+    opacity: 1;
+    cursor: not-allowed;
+  }
