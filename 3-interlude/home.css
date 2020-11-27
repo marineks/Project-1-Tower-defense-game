@@ -57,7 +57,7 @@
 
 .context {
     color: white;
-    background-image: url('./0-images/snow.gif');
+    background-image: url('../0-images/snow.gif');
     height: 50vh;
     display: flex;
     flex-direction: column;
