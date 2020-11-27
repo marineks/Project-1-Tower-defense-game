@@ -70,6 +70,11 @@ span {
     margin-top: 0;
 }
 
+#welcome-text {
+    text-align: center;
+    font-size: 16px;
+}
+
 button {
 
     background: linear-gradient(to right, #c9a0db, #ce8bb2);

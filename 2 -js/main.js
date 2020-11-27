@@ -116,6 +116,7 @@ class Enemy {
             horde.classList.remove('enemy'); 
             horde.classList.remove('hurt');
             this.strength = 0;  
+            clearInterval(IntervalId);
             
         }
     }
@@ -163,6 +164,7 @@ const tileOne = document.querySelector(".tile-one");
 
  function checkBaseCollision(foe, b) {  
         if (foe.x <= (b.x+b.width)) {
+           console.log(minion.attackBase());
             minion.attackBase();
     }
  }
@@ -229,7 +231,8 @@ towerTwo.addEventListener("click", towerB.display.bind(towerB));
 // Start buttons 
 startBtn.addEventListener("click", minion.move);
 retryBtn.addEventListener("click", function (){
-    retryBtn.textContent = "No budget, please do refresh the page";
+    document.location.reload();
+
 });
 nextBtn.addEventListener("click", function (){
     nextBtn.innerHTML = "Stay tuned 😉";
@@ -238,7 +241,7 @@ nextBtn.addEventListener("click", function (){
 //// SET INTERVALS, functions to call
 
 
-setInterval(() => {
+const intervalId = setInterval(() => {
     updatePos();
     checkBaseCollision(foe, b);
     checkEnemyCollision(foe, tile2);
@@ -248,3 +251,4 @@ setInterval(() => {
     }, 1000/60);
 
 minion.domRect();
+

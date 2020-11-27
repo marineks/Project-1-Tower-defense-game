@@ -1,3 +1,8 @@
+
+
+/// Linked to interlude page
+
+
 const gameRules = function () {
     //initialization of the scores to zero
     let playerScore = 0;
