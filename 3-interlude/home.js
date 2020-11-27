@@ -44,16 +44,16 @@ const gameRules = function () {
             setTimeout(() => {
                 compareChoices(this.textContent, computerOptions);
              
-                playerChoice.src = `/0-images/${this.textContent}.png`;
+                playerChoice.src = `./0-images/${this.textContent}.png`;
                 
                 // computerChoice.src = `/0-images/${computerOptions}.png;`
 
                 if (computerOptions === "rock") {
-                  computerChoice.src = "/0-images/rock.png";
+                  computerChoice.src = "./0-images/rock.png";
                 } else if (computerOptions === "scissors") {
-                  computerChoice.src = "/0-images/scissors.png";
+                  computerChoice.src = "./0-images/scissors.png";
                 } else {
-                  computerChoice.src = "/0-images/paper.png";
+                  computerChoice.src = "./0-images/paper.png";
                 }
             }, 2500);
 
