@@ -111,7 +111,7 @@ li:before {
 }
 
 .grass {
-    background-image: url(./0-images/grass.png); 
+    background-image: url(../0-images/grass.png); 
     background-size: contain;
 }
 
@@ -138,21 +138,21 @@ li:before {
 
 
 .tower-rank-one {
-    background-image: url(./0-images/tower1.gif);
+    background-image: url(../0-images/tower1.gif);
     background-size: contain;
     background-repeat: no-repeat;
 
 }
 
 .tower-rank-two {
-    background-image: url(./0-images/tower2.jpg);
+    background-image: url(../0-images/tower2.jpg);
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 #enemy {
       display: inline-block;
-      background-image: url(./0-images/enem.gif); 
+      background-image: url(../0-images/enem.gif); 
       background-repeat: no-repeat;
       background-size: contain;
       width: 60px;
@@ -163,7 +163,7 @@ li:before {
 
 .bullets {
     box-sizing: content-box;
-    background-image: url(./0-images/bullets.gif); 
+    background-image: url(../0-images/bullets.gif); 
     background-repeat: repeat;
     background-size: contain;
 }
