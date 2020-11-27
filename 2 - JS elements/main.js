@@ -71,6 +71,7 @@ class Tower {
         setInterval(() => {
             minion.health = minion.health - 2; 
             horde.classList.add('hurt'); 
+            tile2.classList.add('bullets');
             minion.checkDie(); 
         }, 1000);
            
@@ -89,8 +90,15 @@ class Enemy {
         let currentPos = horde.getBoundingClientRect();
         return currentPos;
     }
+    // createNewEnemy () {
+    //     const newEl = document.createElement('div');
+    //     newEl.classname = "enemy";
+    //     grid.appendChild('newEl');
+    //     return newEl;
+    // }
     move() {
         horde.classList.add('moving');
+        // minions.push(new minions.Instance());
     }
     attackBase(){      
         
@@ -116,8 +124,25 @@ class Enemy {
  const towerA = new Tower();
  const towerB = new Tower();
  
+ 
+ const listEnemy = [];
  const minion = new Enemy();
 
+//  const minions = {
+//     Instance: Enemy,
+//     push: function (minion) {
+//       listEnemy.push(minion);
+//       return listEnemy;
+//     },
+//     get: function () {
+//       return listEnemy;
+//     },
+//     reset: function () {
+//       listEnemy.splice(0, listEnemy.length);
+//     },
+//   };
+
+  
  //// CHECK COLLISIONS
 
  // Attack of the base

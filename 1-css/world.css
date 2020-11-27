@@ -136,6 +136,7 @@ li:before {
     margin-top: 2rem;
 }
 
+
 .tower-rank-one {
     background-image: url(/0-images/tower1.gif);
     background-size: contain;
@@ -158,6 +159,13 @@ li:before {
       height: 60px;
       overflow: hidden;
       margin-top: 50px;
+}
+
+.bullets {
+    box-sizing: content-box;
+    background-image: url(/0-images/bullets.gif); 
+    background-repeat: repeat;
+    background-size: contain;
 }
 
 .moving {
